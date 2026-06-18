@@ -517,9 +517,10 @@ puppetserver:
       #  service.beta.kubernetes.io/azure-load-balancer-internal: "true"
       #  cloud.google.com/load-balancer-type: "Internal"
       #  service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: "private"
-      additionalSpec: {}
       labels: {}
       loadBalancerIP: ""
+      additionalSpec: {}
+      ## Additional service specification
       ## Headless service for Puppet Server Compilers
       headless:
         ports:
