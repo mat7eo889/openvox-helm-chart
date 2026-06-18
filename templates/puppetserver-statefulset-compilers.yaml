@@ -3,6 +3,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: {{ template "puppetserver.fullname" . }}-puppetserver-compiler
+  namespace: {{ .Release.Namespace }}
   labels:
     {{- include "puppetserver.puppetserver-compilers.labels" . | nindent 4 }}
     {{- with .Values.puppetserver.compilers.extraLabels -}}
@@ -138,12 +139,6 @@ spec:
               drop:
                 - all
               add:
-                - CAP_CHOWN
-                - CAP_SETUID
-                - CAP_SETGID
-                - CAP_DAC_OVERRIDE
-                - CAP_AUDIT_WRITE
-                - CAP_FOWNER
                 - CHOWN
                 - SETUID
                 - SETGID

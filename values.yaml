@@ -517,6 +517,7 @@ puppetserver:
       #  service.beta.kubernetes.io/azure-load-balancer-internal: "true"
       #  cloud.google.com/load-balancer-type: "Internal"
       #  service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: "private"
+      additionalSpec: {}
       labels: {}
       loadBalancerIP: ""
       ## Headless service for Puppet Server Compilers
@@ -609,12 +610,6 @@ puppetserver:
       drop:
         - all
       add:
-        - CAP_CHOWN
-        - CAP_SETUID
-        - CAP_SETGID
-        - CAP_DAC_OVERRIDE
-        - CAP_AUDIT_WRITE
-        - CAP_FOWNER
         - CHOWN
         - SETUID
         - SETGID
@@ -782,11 +777,6 @@ puppetdb:
       drop:
         - all
       add:
-        - CAP_FOWNER
-        - CAP_CHOWN
-        - CAP_SETUID
-        - CAP_SETGID
-        - CAP_DAC_OVERRIDE
         - FOWNER
         - CHOWN
         - SETUID
