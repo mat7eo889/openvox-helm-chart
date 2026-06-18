@@ -14,9 +14,6 @@ metadata:
     {{- toYaml .Values.puppetserver.compilers.service.headless.annotations | nindent 4 }}
   {{- end }}
 spec:
-  {{- with .Values.puppetserver.compilers.service.additionalSpec }}
-  {{- toYaml . | nindent 2 }}
-  {{- end }}
   clusterIP: None
   ports:
     {{- range $key, $value := .Values.puppetserver.compilers.service.headless.ports }}
