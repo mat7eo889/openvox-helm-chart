@@ -635,6 +635,7 @@ r10k:
   asSidecar: true
   podSecurityContext:
     runAsNonRoot: true
+  g10kConfig: false
   containerSecurityContext:
     allowPrivilegeEscalation: false
     capabilities:
